@@ -62,6 +62,10 @@ import { Project } from '../../../core/models/portfolio.models';
       flex-direction: column;
       height: 100%;
 
+      @media (max-width: 600px) {
+        padding: var(--space-lg);
+      }
+
       &:hover {
         box-shadow: var(--shadow-lg), 0 0 40px rgba(0, 212, 255, 0.05);
       }

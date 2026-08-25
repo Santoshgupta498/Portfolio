@@ -76,8 +76,8 @@ interface ArchConnection {
             <div
               *ngFor="let node of nodes"
               class="arch__node"
-              [style.left]="node.x + 'px'"
-              [style.top]="node.y + 'px'"
+              [style.left]="(node.x / 900 * 100) + '%'"
+              [style.top]="(node.y / 500 * 100) + '%'"
               [style.--node-color]="node.color"
             >
               <span class="arch__node-dot"></span>
@@ -104,17 +104,12 @@ interface ArchConnection {
       position: relative;
       width: 100%;
       max-width: 900px;
-      height: 500px;
+      aspect-ratio: 900 / 500;
       margin: 0 auto;
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-lg);
       background: rgba(5, 5, 7, 0.6);
       overflow: hidden;
-
-      @media (max-width: 768px) {
-        height: 400px;
-        overflow-x: auto;
-      }
     }
 
     .arch__svg {
@@ -148,6 +143,11 @@ interface ArchConnection {
       cursor: default;
       z-index: 2;
 
+      @media (max-width: 600px) {
+        padding: 4px 8px;
+        gap: 4px;
+      }
+
       &:hover {
         border-color: var(--node-color);
         box-shadow: 0 0 15px color-mix(in srgb, var(--node-color) 30%, transparent);
@@ -161,6 +161,11 @@ interface ArchConnection {
       border-radius: 50%;
       background: var(--node-color, var(--accent-cyan));
       box-shadow: 0 0 4px var(--node-color, var(--accent-cyan));
+
+      @media (max-width: 600px) {
+        width: 5px;
+        height: 5px;
+      }
     }
 
     .arch__node-label {
@@ -170,6 +175,11 @@ interface ArchConnection {
       text-transform: uppercase;
       color: var(--text-secondary);
       white-space: nowrap;
+
+      @media (max-width: 600px) {
+        font-size: 8px;
+        letter-spacing: 0.04em;
+      }
     }
 
     .arch__labels {

@@ -281,8 +281,12 @@ import { PORTFOLIO_CONFIG } from '../../../core/constants/portfolio.config';
     .navbar__burger {
       display: none;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
       gap: 5px;
-      padding: var(--space-sm);
+      padding: 12px;
+      min-width: 44px;
+      min-height: 44px;
       cursor: pointer;
       z-index: 110;
 
@@ -293,7 +297,7 @@ import { PORTFOLIO_CONFIG } from '../../../core/constants/portfolio.config';
 
     .navbar__burger-line {
       width: 22px;
-      height: 1.5px;
+      height: 2px;
       background: var(--text-primary);
       border-radius: 2px;
       transition: all var(--duration-normal) var(--ease-out);

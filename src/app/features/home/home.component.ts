@@ -265,6 +265,10 @@ import { PORTFOLIO_CONFIG } from '../../core/constants/portfolio.config';
       &--tr { top: 16px; right: 16px; }
       &--bl { bottom: 48px; left: 16px; }
       &--br { bottom: 48px; right: 16px; }
+
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
 
     .hero__hud-label {
@@ -299,6 +303,10 @@ import { PORTFOLIO_CONFIG } from '../../core/constants/portfolio.config';
       background: rgba(0, 0, 0, 0.5);
       border: 1px solid rgba(16, 185, 129, 0.2);
       border-radius: var(--radius-full);
+
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
 
     .hero__hud-status-dot {

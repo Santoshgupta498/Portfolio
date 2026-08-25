@@ -133,6 +133,7 @@ import { GitHubStats } from '../../core/models/portfolio.models';
 
       @media (max-width: 600px) {
         grid-template-columns: repeat(7, 1fr);
+        gap: 3px;
       }
     }
 
@@ -141,11 +142,16 @@ import { GitHubStats } from '../../core/models/portfolio.models';
       border-radius: 3px;
       background: color-mix(in srgb, var(--accent-cyan) calc(var(--intensity, 0) * 100%), var(--surface-glass));
       border: 1px solid rgba(0, 212, 255, calc(var(--intensity, 0) * 0.3));
-      min-height: 16px;
+      min-height: 20px;
       transition: transform var(--duration-fast);
 
+      @media (max-width: 600px) {
+        min-height: 24px;
+        border-radius: 4px;
+      }
+
       &:hover {
-        transform: scale(1.3);
+        transform: scale(1.2);
       }
     }
 

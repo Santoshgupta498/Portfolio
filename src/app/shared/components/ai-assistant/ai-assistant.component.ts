@@ -102,6 +102,11 @@ interface QuickAction {
       box-shadow: var(--shadow-lg), 0 0 20px var(--accent-cyan-dim);
       transition: all var(--duration-normal) var(--ease-out);
 
+      @media (max-width: 768px) {
+        bottom: 16px;
+        right: 16px;
+      }
+
       &:hover {
         border-color: var(--accent-cyan);
         box-shadow: var(--shadow-lg), 0 0 30px var(--accent-cyan-dim);
@@ -132,6 +137,15 @@ interface QuickAction {
       opacity: 0;
       pointer-events: none;
       transition: all var(--duration-normal) var(--ease-out);
+
+      @media (max-width: 768px) {
+        bottom: 80px;
+        right: 16px;
+        left: 16px;
+        width: auto;
+        max-width: none;
+        max-height: calc(100vh - 120px);
+      }
 
       &--open {
         transform: translateY(0) scale(1);
@@ -234,14 +248,15 @@ interface QuickAction {
 
     .ai-panel__quick-btn {
       font-family: var(--font-mono);
-      font-size: 10px;
-      padding: 4px 10px;
+      font-size: 11px;
+      padding: 8px 14px;
       background: var(--surface-glass);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-full);
       color: var(--text-secondary);
       cursor: pointer;
       transition: all var(--duration-fast);
+      min-height: 36px;
 
       &:hover {
         border-color: var(--accent-cyan-dim);
@@ -264,6 +279,7 @@ interface QuickAction {
       border-radius: var(--radius-md);
       color: var(--text-primary);
       font-size: var(--text-sm);
+      min-height: 44px;
 
       &:focus {
         border-color: var(--accent-cyan);
@@ -275,8 +291,8 @@ interface QuickAction {
     }
 
     .ai-panel__send {
-      width: 36px;
-      height: 36px;
+      width: 44px;
+      height: 44px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -285,6 +301,7 @@ interface QuickAction {
       border-radius: var(--radius-md);
       color: var(--accent-cyan);
       cursor: pointer;
+      flex-shrink: 0;
       transition: all var(--duration-fast);
 
       &:hover {
